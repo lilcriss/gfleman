@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block javascript %}
+   <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+{% block title %}Paiement de ma commabde - Afrobio{% endblock %}
+
+{% block content %}
+   <h2>Mon récapitulatif</h2>
+   <p>Vérifier vos informations avant de payer votre commande.</p>
+   <hr>
+   <div class="row">
+      <div class="col-md-6">
+        <strong>Mon adresse de livraison</strong><br/>
+        <div class="form-check mt-4">
+          {{ delivery|raw }}
+        </div>
+        <hr>
+        <strong>Mon transporteur</strong><br/>
+        <div class="form-check">
+          {{ carrier.name }}<br/>
+          {{ carrier.description }}<br/>
+          {{ (carrier.price / 100) |number_format(2, ',', '.') }} € 
+        </div>
+        
+      </div>
+      <div class="col-md-6">
+         <div class="text-center">
+          <b>Ma commande</b><br/>  
+         </div>
+         <div class="order-summary">
+          {% set total = null %}
+          {% for key,product in cart %}
+
+           <div class="row {% if key > 0 %}mt-2{% endif %}">
+             <div class="col-5">
+              <img src="/uploads/{{ product.product.illustration }}" alt=" {{ product.product.name }}" height="75px"><br/>
+             </div>
+             <div class="col-4 my-auto">
+               {{ product.product.name }} <br/>
+               <small>
+               {{ product.product.subtitle }}
+               <br/>
+               x {{ product.quantity }}</small>
+             </div>
+             <div class="col-3 my-auto">
+                {{ ((product.product.price * product.quantity) / 100) |number_format(2, ',', '.') }} €
+             </div>
+           </div> 
+
+           {% set total = total + (product.product.price * product.quantity) %}           
+         
+          {% endfor %}
+         </div>
+
+         <hr>
+         <strong>Sous-Total : </strong>{{ (total / 100) |number_format(2, ',', '.') }} €<br/>
+         <strong>Livraison : </strong>{{ (carrier.price / 100) |number_format(2, ',', '.') }} € 
+         <hr>
+         <strong>Total : </strong>{{ ((total / 100) + (carrier.price / 100)) |number_format(2, ',', '.') }} €
+
+            <a href="{{ url('stripe_create_session', { 'reference': reference}) }}" class="btn btn-success btn-block mt-3">Payer | {{ ((total / 100) + (carrier.price / 100)) |number_format(2, ',', '.') }} €</a>
+      </div>
+   </div>
+{% endblock %}
+
+{% block scrip %}
+   <section>
+      <div class="product">
+        <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+        <div class="description">
+          <h3>Stubborn Attachments</h3>
+          <h5>$20.00</h5>
+        </div>
+      </div>
+      <form action="/commande/create-session/{{ reference }}" method="POST">
+        <button type="submit" id="checkout-button">Checkout</button>
+      </form>
+    </section>
+{% endblock %}

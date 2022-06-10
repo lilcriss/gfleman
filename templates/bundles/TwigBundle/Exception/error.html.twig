@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page introuvable - Afrobio{% endblock %}
+
+{% block content %}
+
+  <div class="block-small">
+     <h2>Page introuvable</h2>
+     <p>Désolé, cette page ne semble pas exister.</p>
+     <a href="{{ path('home') }}" class="btn btn-success">Revenir à l'accueil</a>
+  </div>
+
+{% endblock %}

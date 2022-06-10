@@ -1,0 +1,132 @@
+body {
+    position: relative;
+}
+
+.navbar {
+    background-color: #F2A30F;
+}
+
+.navbar-item-custom,
+.navbar-item-custom a {
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.nav-item :hover {
+    font-family: none;
+    font-size: large;
+}
+
+.footer-custom {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background-color: #333130;
+    color: #fff;
+    padding-top: 25px;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.product-item h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 1px;
+}
+
+.product-item {
+    margin-top: 50px;
+}
+
+.product-item .product-subtitle {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product-item .product-price {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.product-container {
+    margin-bottom: 300px;
+}
+
+.product-page-price {
+    font-size: 19px;
+}
+
+.cart-icon {
+    height: 20px;
+    padding-left: 20px;
+}
+
+.block-small {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-check {
+    background-color: rgba(150, 243, 243, 0.533);
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.order-summary {
+    background-color: rgba(150, 243, 243, 0.533);
+    padding: 20px;
+    margin-top: 22px;
+}
+
+.account-item {
+    background-color: #f1f2f6;
+    padding: 60px;
+    border-radius: 30px;
+}
+
+.account-item a {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #1DA877;
+    font-weight: bold;
+}
+
+.account-item a:hover {
+    color: #225342;
+    text-decoration: none;
+}
+
+.admin {
+    background-color: #f1f2f6;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.apropos p {
+    background-color: #f1f2f6;
+    padding: 30px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #000201;
+    font-weight: bold;
+}
+
+.mentions p {
+    background-color: #f1f2f6;
+    padding: 30px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #000201;
+    font-weight: bold;
+}
