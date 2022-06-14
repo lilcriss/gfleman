@@ -3,21 +3,30 @@
 {% block title %}Nous contacter - Afrobio {% endblock %}
 
 {% block content %}
-   <h2>Nous contacter</h2>
-   <p>N'hésitez pas à prendre contact avec moi, je vous répondrai dans les meilleurs délais.</p>
 
-   {% for message in app.flashes('notice') %}
-       <div class="alert alert-info">{{ message }}</div>
-    {% endfor %}
-
-   <div class="row">
-     <div class="col-md-8">{{ form(form)}}</div>
-     <div class="col-md-4">
-       <strong>GF LÉMAN</strong>
-       <hr>
-       Téléphone : +33 (0) 6 44 85 26 54 <br>
-       Email     : contact@gfleman.fr
-     </div>   
-   </div>
+   <div class="row featurette">
+    <div class="col-md-7 order-md-1">
+      <h2 class="featurette-heading">CONTACT</h2> 
+      <p class="lead">N'hésitez pas à prendre contact avec moi pour toutes questions, je vous répondrai dans les meilleurs délais.</p>
+      <p class="lead">Tél  : +33 (0) 6 44 85 26 54</p>
+      <p class="lead">Email: contact@gfleman.fr</p>
+      <p class="lead">
+       <img src="{{ asset('assets/img/whatsapp.png') }}" alt="Whatsapp">
+       <a href="https://www.whatsapp.com/download/" target="_blank">WHATSAPP</a>
+      </p>
+      <p class="lead">
+       <img src="{{ asset('assets/img/facebook.png') }}" alt="Facebook">
+       <a href="https://www.facebook.com/GF-L%C3%A9man-113599931337676" target="_blank">FACEBOOK</a>
+      </p>
+      <p class="lead">
+       <img src="{{ asset('assets/img/instagram.png') }}" alt="Instagram">
+       <a href="https://www.instagram.com/gfleman/" target="_blank">INSTAGRAM</a>
+      </p>
+                
+    </div>
+    <div class="col-md-5 order-md-2">
+      <img src="{{ asset('assets/img/gf.jpg')}}" class="img-fluid" alt="un frelon">
+    </div>
+  </div>
 
 {% endblock %}

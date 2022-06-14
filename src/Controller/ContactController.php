@@ -21,7 +21,7 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $email = (new Email())
             ->from('contact@lesite.fr')
-            ->to(['', ''])
+            ->to(['lilcriss@hotmail.fr', ''])
             ->subject('Time for Symfony Mailer!')
             ->text('Sending emails is fun again!')
             ->html('
@@ -31,7 +31,7 @@ class ContactController extends AbstractController
 
             $mailer->send($email);
 
-            $this->addFlash('notice', 'Merci de nous avoir contacté. Notre équipe va vous répondre dans les meilleurs délais.'); 
+            $this->addFlash("notice", "Merci de m'avoir contacté. Je vais vous répondre dans les meilleurs délais."); 
         }
 
         return $this->render('contact/index.html.twig', [
