@@ -80,7 +80,7 @@
             {% for key,header in headers %}
             <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ header.illustration }}');background-size:cover;">
                 <div class="container">
-                    <div class="carousel-caption text-left">
+                    <div class="carousel-caption text-left font-weight-bold">
                         <h1>{{ header.title }}</h1>
                         <p>{{ header.content }}</p>
                         <p><a class="btn btn-lg btn-warning" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a></p>
